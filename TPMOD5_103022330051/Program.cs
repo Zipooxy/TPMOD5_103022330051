@@ -2,6 +2,21 @@
 
 using System;
 
+class DataGeneric<T>
+{
+    private T data;
+
+    public DataGeneric(T data)
+    {
+        this.data = data;
+    }
+
+    public void PrintData()
+    {
+        Console.WriteLine($"Data yang tersimpan adalah: {data}");
+    }
+}
+
 class HaloGeneric
 {
     public void SapaUser<T>(T user)
@@ -15,7 +30,11 @@ class Program
     static void Main()
     {
         HaloGeneric halo = new HaloGeneric();
-        halo.SapaUser("Zaky");
+        halo.SapaUser("zaky");
+
+        DataGeneric<string> data = new DataGeneric<string>("103022300051");
+        data.PrintData();
     }
 }
+
 
